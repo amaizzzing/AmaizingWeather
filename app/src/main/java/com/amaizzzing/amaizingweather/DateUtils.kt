@@ -8,7 +8,7 @@ object DateUtils {
         SimpleDateFormat("dd.MM").format(Date(dateInMillis))
 
     fun millisToTimeString(dateInMillis: Long) =
-        SimpleDateFormat("HH:ss").format(Date(dateInMillis))
+        SimpleDateFormat("HH:mm").format(Date(dateInMillis))
 
     fun atEndOfDay(date: Long): Long {
         val calendar = Calendar.getInstance()
