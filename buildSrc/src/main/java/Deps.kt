@@ -38,6 +38,10 @@ private const val daggerVersion = "2.24"
 //glide
 private const val glideVersion = "4.12.0"
 
+//mockito
+private const val mockitoVerstion = "4.0.0"
+private const val mockitoKotlinVerstion = "2.2.0"
+
 //firebase
 private const val firebaseFuncs = "20.0.0"
 private const val firebaseMsg = "22.0.0"
@@ -104,6 +108,11 @@ object Dependencies{
     }
     object Glide {
         val glide = "com.github.bumptech.glide:glide:$glideVersion"
+    }
+    object Mockito {
+        val mockito = "org.mockito:mockito-core:$mockitoVerstion"
+        val mockitoInline = "org.mockito:mockito-inline:$mockitoVerstion"
+        val mockitoKotlin = "com.nhaarman.mockitokotlin2:mockito-kotlin:$mockitoKotlinVerstion"
     }
     object Firebase {
         val firebaseFunctions = "com.google.firebase:firebase-functions:$firebaseFuncs"
