@@ -70,7 +70,7 @@ class SearchCityFragment: MvpAppCompatFragment(), SearchCityView, BackButtonList
                 .observeOn(uiScheduler)
                 .subscribe { text ->
                     showLoad()
-                    presenter.makeSearch(text)
+                    presenter.makeSearch_tempForTests(text)
                 }
         }
 

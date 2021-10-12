@@ -2,6 +2,7 @@ package com.amaizzzing.amaizingweather.mvp.models.api
 
 import com.amaizzzing.amaizingweather.mvp.models.entity.retrofit.city.GeonameCity
 import io.reactivex.rxjava3.core.Single
+import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -13,4 +14,12 @@ interface IGeonamesDataSource {
         @Query("limit") limit: String,
         @Query("addressdetails")addressDetails: String
     ): Single<List<GeonameCity>>
+
+    @GET("/")
+    fun getCitiesByName_tempForTests(
+        @Query("city") nameCity: String,
+        @Query("format") format: String,
+        @Query("limit") limit: String,
+        @Query("addressdetails")addressDetails: String
+    ): Call<List<GeonameCity>?>?
 }

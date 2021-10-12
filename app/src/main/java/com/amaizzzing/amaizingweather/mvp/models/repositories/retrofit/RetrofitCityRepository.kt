@@ -5,10 +5,14 @@ import com.amaizzzing.amaizingweather.Constants.CITY_API_FORMAT
 import com.amaizzzing.amaizingweather.Constants.CITY_API_LIMIT
 import com.amaizzzing.amaizingweather.mvp.models.api.IGeonamesDataSource
 import com.amaizzzing.amaizingweather.mvp.models.entity.list.model_factory.ICityModelFactory
+import com.amaizzzing.amaizingweather.mvp.models.entity.retrofit.city.GeonameCity
 import com.amaizzzing.amaizingweather.mvp.models.network.INetworkStatus
 import com.amaizzzing.amaizingweather.mvp.models.repositories.room.ICityCache
 import io.reactivex.rxjava3.core.Single
 import io.reactivex.rxjava3.schedulers.Schedulers
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class RetrofitCityRepository(
         val api: IGeonamesDataSource,
@@ -42,4 +46,36 @@ class RetrofitCityRepository(
                     }
                 }
             }.subscribeOn(Schedulers.io())
+
+    override fun getCityByName_tempForTests(
+        cityName: String,
+        callback: CityRepositoryCallback
+    ) {
+        val call = api.getCitiesByName_tempForTests(
+            nameCity = cityName,
+            format = CITY_API_FORMAT,
+            limit = CITY_API_LIMIT,
+            addressDetails = CITY_API_DETAILS)
+        call?.enqueue(object : Callback<List<GeonameCity>?> {
+
+            override fun onResponse(
+                call: Call<List<GeonameCity>?>,
+                response: Response<List<GeonameCity>?>
+            ) {
+                callback.handleCityResponse(response)
+            }
+
+            override fun onFailure(
+                call: Call<List<GeonameCity>?>,
+                t: Throwable
+            ) {
+                callback.handleCityError()
+            }
+        })
+    }
+
+    interface CityRepositoryCallback {
+        fun handleCityResponse(response: Response<List<GeonameCity>?>?)
+        fun handleCityError()
+    }
 }

@@ -10,8 +10,8 @@ class CityModelFactory: ICityModelFactory {
             cityId = response.place_id,
             lat = response.lat,
             lon = response.lon,
-            cityName = response.display_name.substringBefore(","),
-            fullCityName = response.display_name
+            cityName = response.display_name?.substringBefore(",") ?: "",
+            fullCityName = response.display_name ?: ""
         )
 
     override fun getCityModelFromDbEntity(entity: CityDbEntity) =
