@@ -75,6 +75,23 @@ object Dependencies{
         val junit = "junit:junit:$junitVersion"
         val espresso = "androidx.test.espresso:espresso-core:$espressoVersion"
         val runner = "androidx.test:runner:$runnerVersion"
+        val core = "androidx.test:core:1.3.0"
+        val junitExt = "androidx.test.ext:junit:1.1.2"
+        val junitTruth = "androidx.test.ext:truth:1.3.0"
+        val testRules = "androidx.test:rules:1.4.0-alpha05"
+
+        val mockitoCore = "org.mockito:mockito-core:2.19.0"
+        val mockitoInline = "org.mockito:mockito-inline:2.8.9"
+        val mockitoKotlin = "com.nhaarman:mockito-kotlin:1.5.0"
+
+        val robolectric = "org.robolectric:robolectric:4.5.1"
+        val espressoCore = "androidx.test.espresso:espresso-core:3.3.0"
+        val espressoIntents = "androidx.test.espresso:espresso-intents:3.3.0"
+        val espressoContrib = "androidx.test.espresso:espresso-contrib:3.3.0"
+
+        val uiAutomator = "androidx.test.uiautomator:uiautomator:2.2.0"
+
+        val fragmentTest = "androidx.fragment:fragment-testing:1.3.3"
     }
     object Moxy {
         val moxy = "com.github.moxy-community:moxy:$moxyVersion"

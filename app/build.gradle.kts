@@ -72,6 +72,26 @@ dependencies {
     kapt(Dependencies.Dagger.daggerCompiler)
 
     testImplementation(Dependencies.TestLibs.junit)
+    testImplementation(Dependencies.TestLibs.core)
+    testImplementation(Dependencies.TestLibs.junitExt)
+    testImplementation(Dependencies.TestLibs.junitTruth)
+    androidTestImplementation(Dependencies.TestLibs.junitExt)
     androidTestImplementation(Dependencies.TestLibs.runner)
+    androidTestImplementation(Dependencies.TestLibs.testRules)
+
     androidTestImplementation(Dependencies.TestLibs.espresso)
+    androidTestImplementation(Dependencies.TestLibs.espressoCore)
+    testImplementation(Dependencies.TestLibs.espressoIntents)
+    testImplementation(Dependencies.TestLibs.espressoCore)
+    debugImplementation(Dependencies.TestLibs.espressoContrib)
+
+    testImplementation(Dependencies.TestLibs.mockitoCore)
+    testImplementation(Dependencies.TestLibs.mockitoInline)
+    testImplementation(Dependencies.TestLibs.mockitoKotlin)
+
+    testImplementation(Dependencies.TestLibs.robolectric)
+
+    androidTestImplementation(Dependencies.TestLibs.uiAutomator)
+
+    debugImplementation(Dependencies.TestLibs.fragmentTest)
 }
